@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">DnDSFX</string>
+
+    <string-array name="musicas">
+        <item>Victoria</item>
+        <item>Arpa</item>
+        <item>Laúd</item>
+        <item>Guitarras</item>
+    </string-array>
+
+    <string-array name="ambientes">
+        <item>Poblado</item>
+        <item>Ciudad</item>
+        <item>Comercio</item>
+        <item>Catacumbas</item>
+        <item>Puerto</item>
+        <item>Océano</item>
+        <item>Bosque</item>
+        <item>Montañas</item>
+    </string-array>
+
+</resources>
