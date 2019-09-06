@@ -9,6 +9,8 @@
     </string-array>
 
     <string-array name="ambientes">
+        <item>Lluvia</item>
+        <item>Taverna</item>
         <item>Poblado</item>
         <item>Ciudad</item>
         <item>Comercio</item>
@@ -17,6 +19,7 @@
         <item>Océano</item>
         <item>Bosque</item>
         <item>Montañas</item>
+
     </string-array>
 
 </resources>
