@@ -1,28 +1,39 @@
 package com.example.dndsfx;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.content.res.AppCompatResources;
 
+import android.content.res.ColorStateList;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.dndsfx.R.color;
+
 import org.w3c.dom.Text;
+
+import java.util.EventListener;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    TextView musicaSeleccionada;
+    private TextView musicaSeleccionada;
 
-    TextView ambienteSeleccionado;
+    private TextView ambienteSeleccionado;
 
-    String textoMusica = "";
+    private String textoMusica = "";
 
-    String textoAmbiente = "";
+    private String textoAmbiente = "";
+
+    private Button musica;
 
 //    String path = Environment.getExternalStorageDirectory().toString() + "/Pictures";
 //    Log.d("Files", "Path: " + path);
@@ -52,9 +63,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         spinnerAmbiente.setAdapter(adapterAmbiente);
         spinnerAmbiente.setOnItemSelectedListener(this);
 
-        musicaSeleccionada = (TextView) findViewById(R.id.musicaSeleccionada);
+//        musicaSeleccionada = (TextView) findViewById(R.id.musicaSeleccionada);
 
         ambienteSeleccionado = (TextView) findViewById(R.id.ambienteSeleccionado);
+
+        musica = findViewById(R.id.play_music);
 
         // Load Music
 
@@ -70,6 +83,40 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
+
+    }
+
+    public void toggleButtonText( Button btn, View view )
+    {
+
+        if( btn.getText().toString() == "STOP" )
+        {
+
+
+            btn.setText( "PLAY" );
+
+            btn.setBackgroundTintList(AppCompatResources.getColorStateList( view.getContext(), R.color.design_default_color_primary_dark));
+
+//            btn.setBackgroundColor( Color.parseColor( "303F9F" ) );
+
+//            btn.setBackgroundTintList(ColorStateList.valueOf( Color.parseColor( "FF303F9F" ) ));
+
+        }else{
+
+            btn.setText( "STOP" );
+
+//            btn.setBackgroundColor( Color.RED );
+
+            btn.setBackgroundTintList(ColorStateList.valueOf( Color.RED ));
+
+        }
+
+    }
+
+    public void playMusic( View view )
+    {
+
+        toggleButtonText(musica, view);
 
     }
 
